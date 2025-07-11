@@ -23,23 +23,23 @@ public class Main {
             opcao = scanner.nextInt();
 
             switch (opcao) {
-                case 1:
+                case 1 -> {
                     System.out.printf("Saldo atual: R$ %.2f\n", conta.getSaldo());
-                    break;
-                case 2:
+                }
+                case 2 -> {
                     System.out.printf("Limite do Cheque Especial: R$ %.2f\n", conta.getLimiteChequeEspecial());
-                    break;
-                case 3:
+                }
+                case 3 -> {
                     System.out.print("Informe o valor a depositar: R$ ");
                     float valorDeposito = scanner.nextFloat();
                     conta.depositar(valorDeposito);
-                    break;
-                case 4:
+                }
+                case 4 -> {
                     System.out.print("Informe o valor a sacar: R$ ");
                     float valorSaque = scanner.nextFloat();
                     conta.sacar(valorSaque);
-                    break;
-                case 5:
+                }
+                case 5 -> {
                     System.out.print("Informe o valor do boleto: R$ ");
                     float valorBoleto = scanner.nextFloat();
                     if (conta.pagarBoleto(valorBoleto)) {
@@ -47,22 +47,21 @@ public class Main {
                     } else {
                         System.out.println("Falha ao pagar o boleto.");
                     }
-                    break;
-                case 6:
+                }
+                case 6 -> {
                     if (conta.estaUsandoChequeEspecial()) {
                         System.out.println("Você está usando o cheque especial.");
                     } else {
                         System.out.println("Você não está usando o cheque especial.");
                     }
-                    break;
-                case 0:
+                }
+                case 0 -> {
                     System.out.println("Saindo...");
-                    break;
-                default:
+                }
+                default -> {
                     System.out.println("Opção inválida. Tente novamente.");
+                }
             }
-
-
         } while (opcao != 0);
 
         scanner.close();
